@@ -1,0 +1,94 @@
+
+<div *ngIf='itsActive' class='second container'>
+    <div>
+        <h1>Questions...</h1>
+    </div>
+  <div class="row">
+    <div class="col">
+      <input type="text" #name class="form-control" placeholder="First name">
+    </div>
+    <div class="col">
+      <input type="text" #lastname class="form-control" placeholder="Last name">
+    </div>
+    <button (click)='sending(name.value,lastname.value)' class='btn btn-info'>Create Player</button>
+  </div>
+     
+</div>
+<div *ngIf='showThanks' class='containers'>
+  <div>
+   <div class='thanks' >
+      <h2>Thanks {{username}}</h2>
+     </div>
+    <div class='info-container'>
+        <button (click)='showWebsite()'class='btn btn-info'>Open Website</button>
+     </div>
+  </div>
+</div>
+
+<div *ngIf='show' class='main container'>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <h2 class='secondMessage'>{{sessionContent}} {{count}} / 12</h2>
+        </a>
+      </nav>
+    <div class='secondContainer'>
+      <div>
+       <div class='questions'>
+              Answer the cuestionare for points
+       </div>
+         <div class='eventStarter'>
+                <button (click) = 'start()'class='btn btn-danger start'>Start</button>
+            </div>
+         </div>
+    </div>  
+</div>
+<div *ngIf='serve' class='main container'>
+  <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <h2 class='secondMessage'>{{sessionContent}} {{count}} / 12</h2>
+      </a>
+    </nav>
+  <div class='secondContainer'>
+    <div>
+     <div class='questionss'>
+             {{Question}}
+     </div>
+       <div class='eventStarters'>
+         <form>
+           <div>
+              <input type='radio' name='done' value='{{one}}' (change) = 'collectingScores($event)'> {{one}}
+           </div>   
+             <div>
+                <input type='radio' name='done' value='{{two}}' (change) = 'collectingScores($event)'> {{two}}
+             </div>
+            <div>
+                <input type='radio'  name='done'value='{{thre}}' (change) = 'collectingScores($event)'> {{thre}}
+            </div>
+               <div>
+                  <input type='radio' name='done' value='{{four}}' (change) = 'collectingScores($event)'> {{four}}
+               </div>
+             
+                   <button (click) = 'done($event);'class='start btn btn-danger'>Next</button>
+          
+              </form>
+          </div>
+       </div>
+  </div>  
+</div>
+<div *ngIf='end' class='main container'>
+  <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <h2 class='secondMessage'>{{sessionContent}} {{count}} / 12</h2>
+      </a>
+    </nav>
+  <div class='secondContainer'>
+    <div>
+     <div class='questions'>
+            {{count}} of {{times}}
+     </div>
+       <div class='eventStarter'>
+              <button (click) = 'start()'class='btn btn-danger start'>Ok</button>
+          </div>
+       </div>
+  </div>  
+</div>
