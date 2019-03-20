@@ -124,6 +124,7 @@ export class AppComponent {
        console.log(this.selected);
    
       }
+  // keeping counts of how many try s the users make using the variable times
      times:number = 0;
       done(event){
         event.preventDefault();
@@ -137,6 +138,7 @@ export class AppComponent {
           this.checkCount();
       }
       end:boolean = false;
+  // this variable its to show the results of users after the questions are done .....
       checkCount(){
          if(this.times < 12){
             console.log(this.times)
